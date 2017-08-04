@@ -1,0 +1,29 @@
+# Antigen config
+source ~/shell/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle command-not-found
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+# Load the theme.
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+# Tell Antigen that you're done.
+antigen apply
+
+DEFAULT_USER=`whoami`
+SPACESHIP_DOCKER_SHOW=false
+
+# export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fbr - checkout git branch
+#fbr() {
+# local branches branch
+# branches=$(git branch -vv) &&
+# branch=$(echo "$branches" | fzf +m) &&
+# git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+#}
+
